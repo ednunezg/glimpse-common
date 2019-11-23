@@ -1,0 +1,46 @@
+{
+  "front_card_presets": {
+    "v1": {
+      "card_width_px": 500,
+      "card_height_px": 280
+    }
+  },
+
+  "back_card_presets": {
+    "v1": {
+      "qr_top_gap_px": 22,
+      "qr_right_gap_px": 22,
+      "qr_width_px": 106,
+      "qr_height_px": 106,
+      "qr_border_radius_px": 15,
+      "qr_border_width_px": 1,
+      "card_width_px": 500,
+      "card_height_px": 280
+    }
+  },
+
+  "default_target_image": "Flame",
+
+  "targets": {
+    "Flame": {
+      "file": "target4.jpg",
+      "qr_border_enabled": false
+    },
+    "Rock": {
+      "file": "target1.jpg",
+      "qr_border_enabled": true
+    },
+    "Wood": {
+      "file": "target2.jpg",
+      "qr_border_enabled": true
+    },
+    "Water": {
+      "file": "target3.jpg",
+      "qr_border_enabled": false
+    },
+    "Color": {
+      "file": "target5.jpg",
+      "qr_border_enabled": true
+    }
+  }
+}
