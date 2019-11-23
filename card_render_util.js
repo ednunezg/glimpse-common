@@ -84,7 +84,7 @@ class CardFront extends React.Component {
           <p style={{fontSize: "18px"}}>{card.email}</p>
           <p style={{fontSize: "18px"}}>{card.phone} </p>
           <p style={{fontSize: "15px"}}>{card.address} </p>
-          <p style={{fontSize: "24px", marginTop: "6px"}}> {card.about} </p>
+          <p style={{fontSize: "15px", marginTop: "6px"}}> {card.about} </p>
         </div>
       </div>
     )
