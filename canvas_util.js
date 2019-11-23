@@ -48,8 +48,8 @@ const Exported = {
     const scaleY = mediaHeight / elHeight;
 
     // Make dimensions of the canvas the natural size of the cropped section of the image, or scale down if max width is specified
-    let canvasWidth = crop.width
-    let canvasHeight = crop.height
+    let canvasWidth = crop.width * scaleX
+    let canvasHeight = crop.height * scaleY
     if(opts.staticCanvasWidth) {
       let width = opts.staticCanvasWidth
       canvasWidth = crop.width > crop.height ? width : Math.round((crop.width / crop.height) * width)
@@ -78,7 +78,6 @@ const Exported = {
       crop.y * scaleY,
       crop.width * scaleX,
       crop.width * (canvasHeight/canvasWidth) * scaleY,
-      // crop.height * scaleY,
       0,
       0,
       canvasWidth,
