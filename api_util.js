@@ -18,6 +18,7 @@ const Exported = {
       headers: buildApiHeaders(),
       onUploadProgress: onProgress,
       maxBodyLength: 1000,
+      timeout: 60000, // 1 minute timeout
     }
 
     var form_data = new FormData();
