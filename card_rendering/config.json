@@ -42,5 +42,13 @@
       "file": "target5.jpg",
       "qr_border_enabled": true
     }
+  },
+
+  "targets_ids": {
+    "t1": "Rock",
+    "t2": "Wood",
+    "t3": "Water",
+    "t4": "Flame",
+    "t5": "Color"
   }
 }
