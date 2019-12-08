@@ -19,36 +19,205 @@
     }
   },
 
-  "default_target_image": "Flame",
+  "default_target_image": "Ocean",
+
+  "valid_target_categories": ["All", "Art", "Abstract", "Nature", "City"],
+
+  "target_selection_display_order": [
+    "Ocean",
+    "Plants",
+    "Pebbles",
+    "Lake Shore",
+    "Polygons",
+    "Mesh",
+    "Wireframe",
+    "Circuit",
+    "Paint Swirl",
+    "Paint Tides",
+    "Graffiti",
+    "NYC",
+    "SF",
+    "Paris",
+    "London",
+    "Shanghai",
+    "Floral",
+    "Rock"
+  ],
 
   "targets": {
-    "Flame": {
-      "file": "target4.jpg",
-      "qr_border_enabled": false
-    },
-    "Rock": {
-      "file": "target1.jpg",
-      "qr_border_enabled": true
-    },
-    "Wood": {
-      "file": "target2.jpg",
-      "qr_border_enabled": true
-    },
     "Water": {
+      "__comment": "This is just an alias for 'Ocean'. It has been renamed",
+      "id": 3,
       "file": "target3.jpg",
       "qr_border_enabled": false
     },
+    "Flame": {
+      "notes": "This is just an alias for 'Paint Swirl'. It has been renamed",
+      "id": 4,
+      "file": "target4.jpg",
+      "qr_border_enabled": false
+    },
     "Color": {
+      "notes": "This is just an alias for 'Graffiti'. It has been renamed",
+      "id": 5,
       "file": "target5.jpg",
       "qr_border_enabled": true
+    },
+    "Rock": {
+      "id": 1,
+      "file": "target1.jpg",
+      "qr_border_enabled": true,
+      "categories": ["All", "Nature"]
+    },
+    "Wood": {
+      "id": 2,
+      "file": "target2.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Art"]
+    },
+    "Ocean": {
+      "id": 3,
+      "file": "target3.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Nature"],
+      "original_source": "https://unsplash.com/photos/wc9avd2RaN0",
+      "author": "Christoffer Engström"
+    },
+    "Paint Swirl": {
+      "id": 4,
+      "file": "target4.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Art"],
+      "original_source": "https://unsplash.com/photos/VS_kFx4yF5g",
+      "author": "Daniel Olah"
+    },
+    "Graffiti": {
+      "id": 5,
+      "file": "target5.jpg",
+      "qr_border_enabled": true,
+      "categories": ["All", "Art"],
+      "original_source": "https://unsplash.com/photos/GfmIT_pseDQ",
+      "author": "JFL"
+    },
+    "Paint Puddles": {
+      "__comment": "THIS ONE NEEDS TO BE REPLACED. DOES NOT TRACK WELL",
+      "id": 6,
+      "file": "target6.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Art"],
+      "orginal_source": "https://unsplash.com/photos/Z02W5tEWO8k",
+      "author": "Pawel Czerwinski"
+    },
+    "Paint Tides": {
+      "id": 7,
+      "file": "target7.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Art"],
+      "orginal_source": "https://unsplash.com/photos/AV06Lm42mVo",
+      "author": "Pawel Czerwinski"
+    },
+    "Lake Shore": {
+      "id": 8,
+      "file": "target8.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Nature"],
+      "original_source": "https://unsplash.com/photos/mawU2PoJWfU",
+      "author": "Andreas Gücklhorn"
+    },
+    "NYC": {
+      "id": 9,
+      "file": "target9.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "City"],
+      "original_source": "https://unsplash.com/photos/HTnycx0h_kk",
+      "author": "Olivia Bliss"
+    },
+    "SF": {
+      "id": 10,
+      "file": "target10.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "City"],
+      "original_source": "https://unsplash.com/photos/Ji_G7Bu1MoM",
+      "author": "Joseph Barrientos"
+    },
+    "Paris": {
+      "id": 11,
+      "file": "target11.jpg",
+      "qr_border_enabled": true,
+      "categories": ["All", "City"],
+      "original_source": "https://unsplash.com/photos/zeD4jzEa0Ek",
+      "author": "Jeevan Jose"
+    },
+    "London": {
+      "id": 12,
+      "file": "target12.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "City"],
+      "original_source": "https://unsplash.com/photos/EXdXLrZXS9Q",
+      "author": "Eva Dang"
+    },
+    "Shanghai": {
+      "id": 13,
+      "file": "target13.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "City"],
+      "original_source": "https://unsplash.com/photos/C8Z5DvtWQMw",
+      "author": "Adi Constantin"
+    },
+    "Plants": {
+      "id": 14,
+      "file": "target14.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Nature"],
+      "original_source": "https://www.shutterstock.com/image-photo/grass-55154263",
+      "author": "Gabi Siebenhuehner"
+    },
+    "Pebbles": {
+      "id": 15,
+      "file": "target15.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Nature"],
+      "original_source": "https://unsplash.com/photos/wtjrpjZABcQ",
+      "author": "John Salzarulo"
+    },
+    "Floral": {
+      "id": 16,
+      "file": "target16.jpg",
+      "qr_border_enabled": true,
+      "categories": ["All", "Art"],
+      "original_source": "https://www.shutterstock.com/image-vector/tropical-floral-seamless-vector-pattern-background-1012081978",
+      "author": "NataliaKo"
+    },
+    "Circuit": {
+      "id": 17,
+      "file": "target17.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Abstract"],
+      "original_source": "https://hdwallsbox.com/wallpapers/l/1920x1080/77/abstract-dark-digital-art-1920x1080-76593.jpg"
+    },
+    "Wireframe": {
+      "id": 18,
+      "file": "target18.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Abstract"],
+      "original_source": "https://www.shutterstock.com/image-illustration/abstract-polygonal-space-low-poly-dark-314510582",
+      "author": "NataliaKo"
+    },
+    "Mesh": {
+      "id": 19,
+      "file": "target19.jpg",
+      "qr_border_enabled": false,
+      "categories": ["All", "Abstract"],
+      "original_source": "https://www.shutterstock.com/image-illustration/abstract-technology-background-network-connections-points-1125733811",
+      "author": "Dmytro Vikarchuk"
+    },
+    "Polygons": {
+      "id": 20,
+      "file": "target20.jpg",
+      "qr_border_enabled": true,
+      "categories": ["All", "Abstract"],
+      "original_source": "https://www.shutterstock.com/image-illustration/white-abstract-rumpled-triangular-surface-you-236923000",
+      "author": "archetype"
     }
-  },
-
-  "targets_ids": {
-    "t1": "Rock",
-    "t2": "Wood",
-    "t3": "Water",
-    "t4": "Flame",
-    "t5": "Color"
   }
 }
