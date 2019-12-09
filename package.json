@@ -1,12 +1,36 @@
 {
-  "name": "glimpse-common",
-  "version": "1.0.0",
-  "description": "This is a private NPM package that contains shared utilities / files that are meant to be shared between frontend + backend + landing page + AR. Because sharing is caring.",
-  "main": "index.js",
+  "_from": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100",
+  "_id": "glimpse-common@1.0.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/glimpse-common",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "glimpse-common@git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100",
+    "name": "glimpse-common",
+    "escapedName": "glimpse-common",
+    "rawSpec": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100",
+    "saveSpec": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100",
+    "fetchSpec": "https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git",
+    "gitCommittish": "a663100"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100982b833b8149de498a6e4258a51e56039",
+  "_spec": "glimpse-common@git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100",
+  "_where": "/Users/ENG/Dev/glimpse-frontend",
   "author": "",
-  "license": "ISC",
+  "bundleDependencies": false,
   "dependencies": {
     "axios": "^0.19.0",
     "js-cookie": "^2.2.1"
-  }
+  },
+  "deprecated": false,
+  "description": "This is a private NPM package that contains shared utilities / files that are meant to be shared between frontend + backend + landing page + AR. Because sharing is caring.",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "glimpse-common",
+  "version": "1.0.0"
 }

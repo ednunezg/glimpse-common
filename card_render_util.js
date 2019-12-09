@@ -2,15 +2,6 @@ import React from "react";
 import TargetImageConfig from './card_rendering/config.json'
 var QRCode = require('qrcode.react');
 
-// Get list of available background design options
-function getBackDesignOptions() {
-  let options = []
-  var option
-  for(option in TargetImageConfig.targets) {
-    options.push(option)
-  }
-  return options
-}
 
 // Given a background design option, get a file path
 function getBackDesignFilename(designOption) {
@@ -22,6 +13,25 @@ function getBackDesignFilename(designOption) {
   return TargetImageConfig.targets[designOption].file
 }
 
+// Get all configs for an image name
+function getBackDesignConfig(designOption) {
+  if(!designOption || !TargetImageConfig.targets[designOption]) {
+    const defaultOption = TargetImageConfig.default_target_image
+    return TargetImageConfig.targets[defaultOption]
+  }
+
+  return TargetImageConfig.targets[designOption]
+}
+
+// Get all available categories
+function getBackDesignImageCategories() {
+  return TargetImageConfig.valid_target_categories
+}
+
+// Get selection list
+function getBackDesignSelectionList() {
+  return TargetImageConfig.target_selection_display_order
+}
 // Render the front side of the card
 class CardFront extends React.Component {
   constructor(props) {
@@ -123,7 +133,7 @@ class CardBack extends React.Component {
       right: `${config.qr_right_gap_px}px`,
       top: `${config.qr_top_gap_px}px`,
       borderRadius: `${config.qr_border_radius_px}px`,
-      border: targetDependentConfig.qr_border_enabled ? "1px solid black" : "1px solid rgba(0,0,0,0)"
+      border: targetDependentConfig.qr_border_enabled ? "1px solid grey" : "1px solid rgba(0,0,0,0)"
     }
 
     const qrCodeLegacyStyle = {
@@ -138,19 +148,48 @@ class CardBack extends React.Component {
       backgroundColor: "#ffffff"
     }
 
+    /*
+      QR code fallback chain:
+        (1) QR code URL with target image in query params
+        (2) QR code URL without target image specified in query params (this will only work for default 5 images)
+        (3) QR code NOT generated with QR code monkey
+    */
+
+    var qrCode
+
+    if(this.props.hideQrCode) {
+      qrCode = <img style={qrCodeStyle} className="qrcode" src={require(`./card_rendering/empty_qr_alt.png`)}/>
+    }
+    else if(this.props.showSaveMsgQrCode) {
+      qrCode = <img style={qrCodeStyle} className="qrcode" src={require(`./card_rendering/save_message_qr.png`)}/>
+    }
+    else if(card.backgroundDesignId && card.qrCodesWithTarget && card.backgroundDesignId in card.qrCodesWithTarget) {
+      qrCode = <img style={qrCodeStyle} className="qrcode" src={card.qrCodesWithTarget[card.backgroundDesignId]}/>
+    }
+    else if(card.qrCodeUrl) {
+      qrCode = <img style={qrCodeStyle} className="qrcode" src={card.qrCodeUrl}/>
+    }
+    else {
+      qrCode = (
+        <QRCode
+          style={qrCodeLegacyStyle}
+          value={`https://ar.glimpsecard.com?id=${card.id}?target=${card.backgroundDesignId}`}
+          size={100}
+        />
+      )
+    }
+
     return (
       <div id="card_back" style={outerStyle}>
         <img
           src={require(`./card_rendering/target_img/${getBackDesignFilename(card.backgroundDesignOption)}`)}
         />
+
+        <h2 style={{color: "white", position: "absolute"}}>
+          Hit 'Save' to scan the card.
+        </h2>
         {
-          /* Fallback to using QR code generated in front end if none available */
-          card.qrCodeUrl ? 
-            <img style={qrCodeStyle} className="qrcode" src={card.qrCodeUrl}/>
-            :
-            <div className="qrcode-legacy">
-              <QRCode style={qrCodeLegacyStyle} value={`https://ar.glimpsecard.com?id=${card.id}`} size={100}/>
-            </div>
+          qrCode
         }
       </div>
     )
@@ -158,8 +197,10 @@ class CardBack extends React.Component {
 }
 
 export default {
-  getBackDesignOptions: getBackDesignOptions,
+  getBackDesignSelectionList: getBackDesignSelectionList,
+  getBackDesignImageCategories: getBackDesignImageCategories,
   getBackDesignFilename: getBackDesignFilename,
+  getBackDesignConfig: getBackDesignConfig,
   CardFront: CardFront,
   CardBack: CardBack,
 };
