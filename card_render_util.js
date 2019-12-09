@@ -160,6 +160,9 @@ class CardBack extends React.Component {
     if(this.props.hideQrCode) {
       qrCode = <img style={qrCodeStyle} className="qrcode" src={require(`./card_rendering/empty_qr_alt.png`)}/>
     }
+    else if(this.props.showSaveMsgQrCode) {
+      qrCode = <img style={qrCodeStyle} className="qrcode" src={require(`./card_rendering/save_message_qr.png`)}/>
+    }
     else if(card.backgroundDesignId && card.qrCodesWithTarget && card.backgroundDesignId in card.qrCodesWithTarget) {
       qrCode = <img style={qrCodeStyle} className="qrcode" src={card.qrCodesWithTarget[card.backgroundDesignId]}/>
     }
