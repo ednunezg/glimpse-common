@@ -1,36 +1,36 @@
 import React from "react";
-import TargetImageConfig from './card_rendering/config.json'
+import config from './card_rendering/config.json'
 var QRCode = require('qrcode.react');
 
 
 // Given a background design option, get a file path
 function getBackDesignFilename(designOption) {
-  if(!designOption || !TargetImageConfig.targets[designOption]) {
-    const defaultOption = TargetImageConfig.default_target_image
-    return TargetImageConfig.targets[defaultOption].file
+  if(!designOption || !config.targets[designOption]) {
+    const defaultOption = config.default_target_image
+    return config.targets[defaultOption].file
   }
 
-  return TargetImageConfig.targets[designOption].file
+  return config.targets[designOption].file
 }
 
 // Get all configs for an image name
 function getBackDesignConfig(designOption) {
-  if(!designOption || !TargetImageConfig.targets[designOption]) {
-    const defaultOption = TargetImageConfig.default_target_image
-    return TargetImageConfig.targets[defaultOption]
+  if(!designOption || !config.targets[designOption]) {
+    const defaultOption = config.default_target_image
+    return config.targets[defaultOption]
   }
 
-  return TargetImageConfig.targets[designOption]
+  return config.targets[designOption]
 }
 
 // Get all available categories
 function getBackDesignImageCategories() {
-  return TargetImageConfig.valid_target_categories
+  return config.valid_target_categories
 }
 
 // Get selection list
 function getBackDesignSelectionList() {
-  return TargetImageConfig.target_selection_display_order
+  return config.target_selection_display_order
 }
 // Render the front side of the card
 class CardFront extends React.Component {
@@ -41,12 +41,12 @@ class CardFront extends React.Component {
   render() {
     const card = this.props.card
 
-    const config = TargetImageConfig.front_card_presets.v1
+    const frontConfig = config.front_card_presets.v1
 
     const outerStyle = {
       backgroundColor: "white",
-      width: `${config.card_width_px}px`,
-      height: `${config.card_height_px}px`,
+      width: `${frontConfig.card_width_px}px`,
+      height: `${frontConfig.card_height_px}px`,
       marginRight: "200px",
       overflow: "hidden",
       position: "relative",
@@ -80,7 +80,6 @@ class CardFront extends React.Component {
         <div className="info" style={{
           display: "flex",
           float: "center",
-          justifyContent: "center",
           alignItems: "center",
           marginTop: "20px",
           flexDirection: "column",
@@ -109,13 +108,17 @@ class CardBack extends React.Component {
   render() {
     const card = this.props.card
 
-    const config = TargetImageConfig.back_card_presets.v1
+    const backConfig = config.back_card_presets.v1
     const option = card.backgroundDesignOption || TargetImageConfig.default_target_image
-    const targetDependentConfig = TargetImageConfig.targets[option]
+
+    let targetConfig = config.targets[config.default_target_image]
+    if(option in config) {
+      targetConfig = config.targets[option]
+    }
 
     const outerStyle = {
-      width: `${config.card_width_px}px`,
-      height: `${config.card_height_px}px`,
+      width: `${backConfig.card_width_px}px`,
+      height: `${backConfig.card_height_px}px`,
       marginRight: "200px",
       overflow: "hidden",
       position: "relative",
@@ -128,12 +131,12 @@ class CardBack extends React.Component {
     const qrCodeStyle = {
       position: "absolute",
       boxSizing: "content-box",
-      width:  `${config.qr_width_px}px`,
-      height: `${config.qr_height_px}px`,
-      right: `${config.qr_right_gap_px}px`,
-      top: `${config.qr_top_gap_px}px`,
-      borderRadius: `${config.qr_border_radius_px}px`,
-      border: targetDependentConfig.qr_border_enabled ? "1px solid grey" : "1px solid rgba(0,0,0,0)"
+      width:  `${backConfig.qr_width_px}px`,
+      height: `${backConfig.qr_height_px}px`,
+      right: `${backConfig.qr_right_gap_px}px`,
+      top: `${backConfig.qr_top_gap_px}px`,
+      borderRadius: `${backConfig.qr_border_radius_px}px`,
+      border: targetConfig.qr_border_enabled ? "1px solid grey" : "1px solid rgba(0,0,0,0)"
     }
 
     const qrCodeLegacyStyle = {
