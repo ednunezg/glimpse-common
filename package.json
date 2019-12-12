@@ -1,5 +1,5 @@
 {
-  "_from": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100",
+  "_from": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#066dbcb",
   "_id": "glimpse-common@1.0.0",
   "_inBundle": false,
   "_integrity": "",
@@ -7,19 +7,19 @@
   "_phantomChildren": {},
   "_requested": {
     "type": "git",
-    "raw": "glimpse-common@git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100",
+    "raw": "glimpse-common@git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#066dbcb",
     "name": "glimpse-common",
     "escapedName": "glimpse-common",
-    "rawSpec": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100",
-    "saveSpec": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100",
+    "rawSpec": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#066dbcb",
+    "saveSpec": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#066dbcb",
     "fetchSpec": "https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git",
-    "gitCommittish": "a663100"
+    "gitCommittish": "066dbcb"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100982b833b8149de498a6e4258a51e56039",
-  "_spec": "glimpse-common@git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#a663100",
+  "_resolved": "git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#066dbcb07e24057bbce1c747fc703bdff1b10c94",
+  "_spec": "glimpse-common@git+https://9b84295b1550942163e59044b5b9f8af3a7a4c88:x-oauth-basic@github.com/ednunezg/glimpse-common.git#066dbcb",
   "_where": "/Users/ENG/Dev/glimpse-frontend",
   "author": "",
   "bundleDependencies": false,
